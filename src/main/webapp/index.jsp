@@ -25,7 +25,13 @@
         瀏覽者瀏覽器網頁(追蹤瀏覽者所在位置): <%= request.getRequestURI() %>
         
         <h2>session id: <%= session.getId()%></h2>
-        <a href="login.jsp">會員登入</a>
+        <a href="login.jsp">會員登入</a><br>
+        <a href="google01.jsp">查詢google-servlet</a><br>
+        <a href="www.google.com">查詢google-JSP</a><br>
+        <a href="www.google.com">查詢google-SpringBoot</a><br>
+        <br>
+        <br>
+        <a href="productQuery.jsp">商品清單</a>
         
         
     </body>

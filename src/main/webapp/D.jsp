@@ -20,5 +20,9 @@
         <br>
         <a href="B.jsp">Page B</a>
         從F12的Referer就可以知道使用者從哪個網頁過來的 <%= request.getHeader("Referer") %>
+        <br>
+        這是從checkLogin2回傳過來的錯誤訊息:<%= request.getAttribute("errmsg1")%>
+        <br>
+        這是從checkLogin2回傳過來的錯誤訊息:<%= request.getAttribute("errmsg2")%>
     </body>
 </html>
