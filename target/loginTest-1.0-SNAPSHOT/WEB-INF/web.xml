@@ -8,6 +8,10 @@
         <servlet-name>test</servlet-name>
         <servlet-class>test</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>OrderProcess</servlet-name>
+        <servlet-class>com.mycompany.logintest.OrderProcess</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/K1</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>test</servlet-name>
         <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderProcess</servlet-name>
+        <url-pattern>/OrderProcess</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

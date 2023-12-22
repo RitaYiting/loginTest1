@@ -11,17 +11,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-        <%!
-        //每一個連線都會預設分配一個session
-        HttpSession session;
+        <%
+        //將Referer記錄起來(放到session)供checkLogin2使用
+        session.setAttribute("from", request.getHeader("Referer"));
         %>
     <body>
-        <h1>Hello World!</h1>
+        <h1>從這個網址過來的: <%=request.getHeader("Referer")%></h1>
+        <h1>會員登入頁面</h1>
         
         <h2>session id: <%= session.getId()%></h2>
         瀏覽者瀏覽器網頁(追蹤瀏覽者所在位置): <%= request.getRequestURI() %>    
         
-        <form method="post" action="checkLogin2"> 
+        <form method="get" action="checkLogin2"> 
         <%--<form action="DBConGenerator">--%>
             帳號:<input type="text" name="username" value="" /> <br>
             密碼:<input type="password" name="passwd" value="" /> <br>

@@ -3,6 +3,9 @@ package com.mycompany.logintest;
 
 
 public class CartItem {
+    String productCode;
+    String productName;
+    int qty;
 
     public CartItem(String productCode, String productName, int qty) {
         this.productCode = productCode;
@@ -33,8 +36,6 @@ public class CartItem {
     public int getQty() {
         return qty;
     }
-    String productCode;
-    String productName;
-    int qty;
+
     
 }

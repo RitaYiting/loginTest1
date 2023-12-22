@@ -100,6 +100,7 @@
            }catch( Exception e) { }
        %>
     <body>
+        <a href="productQuery.jsp">回到商品總表</a>
         <h1>商品列表</h1>
         <h3> 查詢類型: <%= productLine %> </h3>
         <h3>語法: <%= sql %> </h3>
