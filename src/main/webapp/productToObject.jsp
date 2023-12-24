@@ -87,7 +87,6 @@
               <th>產品名稱</th> 
               <th>模型比例</th>
               <th>庫存數量</th>
-
               <th>加入購物車</th>
             </tr>
             <% for (ProductModel pm : rows){ %>

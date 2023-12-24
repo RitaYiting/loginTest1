@@ -5,49 +5,21 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 -->
 <html>
     <head>
-        <title>登入畫面</title>
+        <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
-        <h2>您尚未登入系統</h2>
+        <h1>尚未登入會員系統</h1>
+        <h3>3秒後會為您跳轉到登入頁面 請稍後</h3>
         
         <script>
-            // 瀏覽者瀏覽器網頁(追蹤瀏覽者所在位置)
-            var currentLocation = window.location.href;
-            document.write('瀏覽者瀏覽器網頁(瀏覽者所在位置): ' + currentLocation);
-        </script>
-        
-        <h4 id="countdown">系統將在三秒後為您自動轉到登入頁面 請稍後...</h4>
-        
-        <script>
-            //alert('javascript版的彈出視窗')
-            function toLogin(){
-                //轉跳到login.jsp
-                location.href="http://localhost:8080/loginTest/login.jsp";
-            }
-            
-            // 設定初始秒數
-            var seconds = 3;
-            
-            // 定義倒數計時函式
-            function countdown() {
-                document.getElementById('countdown').innerHTML = '系統將在 ' + seconds + ' 秒後為您自動轉到登入頁面 請稍後...';
-                
-                // 減少秒數
-                seconds--;
-                
-                // 如果秒數為 0，執行轉頁
-                if (seconds < 0) {
-                    toLogin();
-                } else {
-                    // 遞迴呼叫自身，實現倒數計時
-                    setTimeout(countdown, 1000);
-                }
-            }            
-            // 啟動倒數計時
-            countdown();
+          // alert('javascript 版的 彈出視窗')  
+          function toLogin() {
+              //轉跳到 login.jsp
+              location.href="http://localhost:8080/loginTest/login.jsp";
+          }
+          setTimeout( toLogin ,3000)
         </script>
     </body>
 </html>

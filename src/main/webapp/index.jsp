@@ -39,7 +39,7 @@
         <br>
         <br>
         <a href="productQuery.jsp">商品清單</a>
-        <a href="ShoppingCart.jsp">檢視購物車</a>
+        <a href="ShoppingCartList.jsp">檢視購物車</a>
         
         
     </body>

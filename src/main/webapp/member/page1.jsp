@@ -31,7 +31,7 @@
     <body>
         瀏覽者瀏覽器網頁(追蹤瀏覽者所在位置): <%= request.getRequestURI() %>
         <h3>會員: <%= memberName %> </h3>
-        <h1>Hello World!</h1>
+        <h1>歡迎使用 xxx 會員系統</h1>
         <h2>session id: <%= session.getId()%></h2>
     </body>
 </html>

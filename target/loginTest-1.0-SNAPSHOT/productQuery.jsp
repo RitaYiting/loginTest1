@@ -12,10 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <a href="ShoppingCart.jsp">檢視購物車內容</a>
-        <a href="settleAccounts.jsp">結帳1</a>                  <!--((直接用超連結))-->
+        <a href="ShoppingCartList.jsp">檢視購物車內容</a>
+        <a href="CheckItOut.jsp">結帳1</a>                  <!--((直接用超連結))-->
         <button onclick="CheckItOut()">結帳2</button>           <!--(直接拉js的function()進來)-->
-        <button onclick="location.href = 'settleAccounts.jsp'">結帳3</button>           <!--(直接拉寫function()進來,不用再另寫js)-->
+        <button onclick="location.href = 'CheckItOut.jsp'">結帳3</button>           <!--(直接拉寫function()進來,不用再另寫js)-->
         
         <h1>巨匠模型專賣店</h1>
         <hr/>
@@ -43,7 +43,7 @@
     </body>
     <script>
         function CheckItOut(){
-            location.href = "settleAccounts.jsp"
+            location.href = "CheckItOut.jsp"
         }
     </script>
 </html>

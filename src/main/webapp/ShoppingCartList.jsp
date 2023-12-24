@@ -40,12 +40,9 @@
     
     <body>
         <h1>購物車內容:</h1>
-        <a href="productQuery.jsp">回到商品總表</a>
-        <a href="settleAccounts.jsp">結帳1</a>                  <!--((直接用超連結))-->
-        <button onclick="CheckItOut()">結帳2</button>           <!--(直接拉js的function()進來)-->
-                <button onclick="location.href = 'settleAccounts.jsp'">結帳3</button>           <!--(直接拉寫function()進來,不用再另寫js)-->
+
         <%
-            if (cart != null && cart.size()>0){
+            if (cart != null && cart.size() > 0 ){
         %>
         <table>
             <tr>
@@ -53,19 +50,24 @@
                 <th>商品名稱</th>
                 <th>數量</th>
             </tr>
-                <%
-                for(CartItem cpm:cart){
-                %>
+            <%--  如有商品 在此處進行迴圈 顯示購物車內商品--%>
+            <%
+            for(CartItem cpm:cart){
+            %>
                 <tr>
                     <td><%= cpm.getProductCode() %></td>
-                    <td><%= cpm.getProductName()%></td>
+                    <td><%= cpm.getProductName() %></td>
                     <td><%= cpm.getQty()%></td>
                     <td><input type="submit" value="取消" /></td>
                 </tr>
-                <%
-                    }
-                %>
-      </table>
+            <%
+                }
+            %>
+        </table>
+        <a href="productQuery.jsp">回到商品總表</a>
+        <a href="CheckItOut.jsp">結帳1</a>                  <!--((直接用超連結))-->
+        <button onclick="CheckItOut()">結帳2</button>           <!--(直接拉js的function()進來)-->
+        <button onclick="location.href = 'CheckItOut.jsp'">結帳3</button>           <!--(直接拉寫function()進來,不用再另寫js)-->
         <%
             }else{
         %>
@@ -76,7 +78,7 @@
     </body>
     <script>
         function CheckItOut(){
-            location.href = "settleAccounts.jsp"
+            location.href = "CheckItOut.jsp"
         }
     </script>    
 </html>

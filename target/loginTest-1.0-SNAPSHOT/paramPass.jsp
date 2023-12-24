@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
-        這是checkLogin2登入成功所傳回來的畫面.
-    </body>
+        <h1>看到這一頁 表示你登入成功</h1>
+            這裡 會顯示 checkLogin2 傳過來的參數:   <%= request.getParameter("msg") %>
+        <hr/>
 </html>

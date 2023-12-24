@@ -25,11 +25,16 @@
     %>
     
     <%
+        //檢查使用者目前的狀態
+        String user = (String) session.getAttribute("username");
+        
         //HttpSession session1 = request.getSession();
         //購物車的容器用 Map存放 key(商品代號)->模型資訊(品名,數量) -> java class來存放
         shoppingCart = (ArrayList) session.getAttribute("cart");
         
-        if(shoppingCart == null){          
+        // 一開始就會有 購物車??????
+        if(shoppingCart == null){
+            //跟 sesssion 要求購物車物件  如果沒有 ...
             shoppingCart = new ArrayList();
             session.setAttribute("cart", shoppingCart); //讓shoppingCart可以繼續跟著Browser活著 就活著
         }
@@ -39,7 +44,7 @@
         
         //檢查是否在購物車內
         if(shoppingCart.size() == 0){
-            //如果在購物車內就直接新增
+            //如果購物車是空的 就直接新增
             CartItem citem = new CartItem(pid,pname,1);
             shoppingCart.add(citem);
         }
@@ -49,7 +54,8 @@
                 if (cti.getProductCode().equals(pid)){
                     //有重覆的 把CartItem數量+1
                     cti.setQty(cti.getQty()+1);
-                    isDuplicate = true; //並設定判斷旗號 發現是重覆的                    
+                    isDuplicate = true; //並設定判斷旗號 發現是重覆的
+                    break; // 提早離開
                     }
                 }
                 //檢查如果沒有重覆則新增
@@ -63,10 +69,21 @@
     <body>
         <h1>購物車</h1>
         <h2>您目前有 <%= shoppingCart.size() %> 項產品在購物車內.</h2>
+        <%
+            if(user == null) {
+        %>            
+        <h3 style="color:#f00">提醒您 目前尚未登入</h3>
+        
+        <% 
+            }
+        %>
+
         您選擇的商品編號是: <%= pid %><br>
         品名: <%= pname %><br>
         
         回商品頁:<a href="productQuery.jsp">回到商品頁面</a><br>
+        or
+        <button onclick="location.href='ProductList.jsp'">回商品列表</button>
         <!--
         取出seeeion
         將收到的產品資訊(產品代號,品名,數量)
